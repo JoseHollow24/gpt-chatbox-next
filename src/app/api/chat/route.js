@@ -11,7 +11,7 @@ async function POST(request) {
     const { messages } = await request.json();
     // Procesar con OpenAI
     const response = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4-turbo-preview",
         stream: true,
         messages
     });
