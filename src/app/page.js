@@ -1,5 +1,6 @@
 'use client'
 import { useChat } from 'ai/react';
+import i18n from '@/utils/i18n.js'
 
 export default function HomePAge() {
   const { handleInputChange, handleSubmit, input, messages, isLoading } = useChat()
@@ -28,19 +29,19 @@ export default function HomePAge() {
           {/* Chatbox */}
           <div className="flex justify-between my-4">
             <label className="text-white block font-bold my-2">
-              say something
+              {i18n.t('ChatBoxTop')}
             </label>
             <button 
               className="bg-blue-600 text-white px-3 py-2 rounded-md focus:outline-none disabled:opacity-50"
               disabled={isLoading || !input}
             >
-              Send
+              {i18n.t('ChatBoxButton')}
             </button>
           </div>
           <textarea 
             rows={3}
             value={input}
-            placeholder="Type your message"
+            placeholder={i18n.t('ChatBoxPlaceholder')}
             className="text-black bg-slate-300 px-3 py-2 w-full rounded-md focus:outline-none"
             onChange={handleInputChange}
           ></textarea>
